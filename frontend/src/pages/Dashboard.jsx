@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { toast } from "react-toastify";
 import GoalForm from "../components/GoalForm";
 import Spinner from "../components/Spinner";
 import { reset, getGoals } from "../features/goals/goalSlice";
@@ -17,7 +16,6 @@ export default function Dashboard() {
 
   useEffect(() => {
     if (isError) {
-      toast.error(message);
       console.log(message);
     }
     if (!user) {
